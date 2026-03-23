@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Conture | Inquiries</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AURA CONTURE</h1>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="collections.html">Products</a></li>
+        <li><a href="trustees.html">Board</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <div class="marquee-container">
+    <marquee>📅 Book a personal styling appointment | Private consultations available 📅</marquee>
+  </div>
+
+  <main>
+    <h2>Inquiries & Appointments</h2>
+    <form id="inquiryForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us about your needs..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Submit Inquiry</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Aura Conture. All rights reserved.</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+  <script>
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert(`Thank you, ${document.getElementById('name').value}. We'll contact you shortly.`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Conture | Board</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AURA CONTURE</h1>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="collections.html">Products</a></li>
+        <li><a href="trustees.html">Board</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <div class="marquee-container">
+    <marquee>👥 Meet the visionaries behind Aura Conture: our Board of Trustees 👥</marquee>
+  </div>
+
+  <main>
+    <h2>Board of Trustees</h2>
+    <div class="trustees-grid">
+      <div class="trustee">
+        <img src="image\WhatsApp Image 2026-03-20 at 6.48.45 PM.png" alt="Member">
+        <h3>Anointed Ositadinma</h3>
+        <p>Chairperson</p>
+      </div>
+      <div class="trustee">
+        <img src="https://i.pravatar.cc/150?u=2" alt="Member">
+        <h3>James Rodriguez</h3>
+        <p>Creative Director</p>
+      </div>
+      <div class="trustee">
+        <img src="https://i.pravatar.cc/150?u=3" alt="Member">
+        <h3>Sophia Chen</h3>
+        <p>Head of Design</p>
+      </div>
+      <div class="trustee">
+        <img src="https://i.pravatar.cc/150?u=4" alt="Member">
+        <h3>Michael Okafor</h3>
+        <p>Finance Lead</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Aura Conture. All rights reserved.</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+  <script>
+    // JavaScript feature: on click, show a greeting
+    document.querySelectorAll('.trustee').forEach((t, index) => {
+      t.addEventListener('click', () => {
+        alert(`You clicked on ${t.querySelector('h3').innerText}`);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Conture | Events</title>
+  <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AURA CONTURE</h1>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="collections.html">Products</a></li>
+        <li><a href="trustees.html">Board</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <div class="marquee-container">
+    <marquee>🎉 Don't miss: Fashion Show Dec 15 | Trunk Show Jan 10 | Charity Gala Feb 5 🎉</marquee>
+  </div>
+
+  <main>
+    <h2>Upcoming Events</h2>
+    <ul class="event-list">
+      <li class="event-item">
+        <span class="event-date">Dec 15, 2026</span>
+        <span>Evening Gala & Fashion Show – 7pm at The Plaza</span>
+      </li>
+      <li class="event-item">
+        <span class="event-date">Jan 10, 2027</span>
+        <span>Summer Collection Launch – 11am at Aura Boutique</span>
+      </li>
+      <li class="event-item">
+        <span class="event-date">Feb 5, 2027</span>
+        <span>Charity Gala – 8pm at Grand Hotel</span>
+      </li>
+      <li class="event-item">
+        <span class="event-date">Mar 20, 2027</span>
+        <span>Exclusive Trunk Show – By Invitation Only</span>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Aura Conture. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // JavaScript feature: countdown to next event
+    const nextEvent = new Date('2026-12-15T19:00:00').getTime();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = nextEvent - now;
+      if (diff < 0) {
+        clearInterval(interval);
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const secs = Math.floor((diff % (1000*60)) / 1000);
+      document.getElementById('countdown')?.remove(); // avoid duplicate
+      const countdownEl = document.createElement('p');
+      countdownEl.id = 'countdown';
+      countdownEl.style.marginTop = '1rem';
+      countdownEl.innerHTML = `<strong>Next event in: ${days}d ${hours}h ${mins}m ${secs}s</strong>`;
+      document.querySelector('main').appendChild(countdownEl);
+    }, 1000);
+  </script>
+</body>
+</html>

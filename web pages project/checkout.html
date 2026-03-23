@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Conture | Checkout</title>
+  <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AURA CONTURE</h1>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="collections.html">Products</a></li>
+        <li><a href="trustees.html">Board</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="marquee-container">
+    <marquee>🛒 Secure checkout | 100% Satisfaction Guaranteed | Free Returns 🛒</marquee>
+  </div>
+
+  <main>
+    <h2>Your Cart</h2>
+    <table class="cart-table">
+      <thead>
+        <tr><th>Product</th><th>Name</th><th>Price</th><th>Qty</th><th>Action</th></tr>
+      </thead>
+      <tbody id="cart-items">
+        <tr><td colspan="5">Loading...</td></tr>
+      </tbody>
+    </table>
+    <h3>Total: $<span id="cart-total">0.00</span></h3>
+
+    <button class="btn" onclick="clearCart(); displayCart();">Clear Cart</button>
+
+    <h2 style="margin-top:2rem;">Checkout</h2>
+    <form id="checkoutForm">
+      <div class="form-group">
+        <label for="cardName">Name on Card</label>
+        <input type="text" id="cardName" required>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" pattern="\d{16}" placeholder="1234 5678 9012 3456" required>
+      </div>
+      <div class="form-group">
+        <label for="expiry">Expiry (MM/YY)</label>
+        <input type="text" id="expiry" pattern="\d{2}/\d{2}" placeholder="12/26" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" pattern="\d{3}" required>
+      </div>
+      <button type="submit" class="btn btn-gold">Place Order</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Aura Conture. All rights reserved.</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+  <script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('Order placed successfully! Thank you for shopping with Aura Conture.');
+      clearCart();
+      displayCart();
+      this.reset();
+    });
+  </script>
+</body>
+</html>
